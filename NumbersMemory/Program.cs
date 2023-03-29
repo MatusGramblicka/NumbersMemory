@@ -4,7 +4,7 @@
     var rndInt = rnd.Next(1000000, 9999999);
     Console.WriteLine(rndInt);
 
-    Console.WriteLine("\n\nPress any key for continue, key 'q' for exit");
+    Console.WriteLine("\n\nPress any key for hiding number and start guessing, or key 'q' for exit");
 
     var anyKey = Console.ReadKey();
 
@@ -20,7 +20,7 @@
     if (!success)
     {
         Console.Clear();
-        Console.WriteLine("Invalid input, press any key for continue, key 'q' for exit");
+        Console.WriteLine("Invalid input, press any key for continue, or key 'q' for exit");
         anyKey = Console.ReadKey();
 
         if (anyKey.KeyChar == 'q')
@@ -33,7 +33,8 @@
     {
         if (number != rndInt)
         {
-            Console.WriteLine("Invalid input, press any key for continue, key 'q' for exit");
+            Console.WriteLine("Invalid input, press any key for continue, or key 'q' for exit\n\n" +
+                              $"{rndInt} does not equal {number}");
             anyKey = Console.ReadKey();
 
             if (anyKey.KeyChar == 'q')
